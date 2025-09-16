@@ -10,6 +10,8 @@ const chatId = process.env.CHAT_ID;
 
 app.post("/send", async (req, res) => {
     try {
+            console.log("Received body:", req.body, req.body.text);
+
         const textData = req.body.text; 
 
         if (!textData || typeof textData !== "string") {
@@ -40,5 +42,6 @@ app.post("/send", async (req, res) => {
 
 // Vercel requires default export
 export default app;
+
 
 
