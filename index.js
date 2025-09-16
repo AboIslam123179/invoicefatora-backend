@@ -10,7 +10,7 @@ const chatId = process.env.CHAT_ID;
 
 app.post("/send", async (req, res) => {
     try {
-        const textData = req.body; // frontend sends already-formatted string
+        const textData = req.body.text; 
 
         if (!textData || typeof textData !== "string") {
             return res.status(400).json({ success: false, error: "Invalid data format" });
@@ -40,4 +40,5 @@ app.post("/send", async (req, res) => {
 
 // Vercel requires default export
 export default app;
+
 
